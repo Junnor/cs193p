@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,234 +22,319 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g00-Ur-FU9">
-                                <rect key="frame" x="20" y="20" width="374" height="716"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="g00-Ur-FU9">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4z-rB-A8M">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                        <color key="backgroundColor" red="0.57551500150000001" green="0.76762070260000004" blue="0.93379407049999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="220.66666666666666"/>
+                                        <color key="backgroundColor" red="0.1333333333" green="0.1333333333" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h9l-os-veK">
-                                        <rect key="frame" x="0.0" y="58" width="374" height="658"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="h9l-os-veK">
+                                        <rect key="frame" x="0.0" y="221.66666666666669" width="414" height="494.33333333333331"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hbm-jO-KRN">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="123.66666666666666"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZRg-Lo-9GE">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="81.666666666666657"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mey-Ad-Bwa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="81.666666666666657"/>
+                                                        <color key="backgroundColor" red="0.89282598350253806" green="0.58594554399141829" blue="0.44377152486768606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="±">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="esz-4r-Uhc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sot-aM-tZc">
+                                                        <rect key="frame" x="103.66666666666666" y="0.0" width="102.99999999999997" height="81.666666666666657"/>
+                                                        <color key="backgroundColor" red="0.89282598349999998" green="0.58594554399999998" blue="0.44377152489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="cos">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kIi-2I-5XY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qC-1A-4nu">
+                                                        <rect key="frame" x="207.66666666666669" y="0.0" width="102.66666666666669" height="81.666666666666657"/>
+                                                        <color key="backgroundColor" red="0.89282598349999998" green="0.58594554399999998" blue="0.44377152489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="sin">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pqV-ND-B1f"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI8-qj-ZvA">
+                                                        <rect key="frame" x="311.33333333333326" y="0.0" width="102.66666666666669" height="81.666666666666657"/>
+                                                        <color key="backgroundColor" red="1" green="0.65628191250000001" blue="0.49704145379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="tan">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uAr-7a-Bwq"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="hbm-jO-KRN">
+                                                <rect key="frame" x="0.0" y="82.666666666666657" width="414" height="81.333333333333371"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDW-lC-fEB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="123.66666666666666"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="−"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="81.333333333333371"/>
+                                                        <color key="backgroundColor" red="0.89282598349999998" green="0.58594554399999998" blue="0.44377152489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="π">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qeo-JR-muu"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKZ-t1-uEm">
-                                                        <rect key="frame" x="96" y="0.0" width="86" height="123.66666666666666"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="+"/>
+                                                        <rect key="frame" x="103.66666666666666" y="0.0" width="102.99999999999997" height="81.333333333333371"/>
+                                                        <color key="backgroundColor" red="0.89282598349999998" green="0.58594554399999998" blue="0.44377152489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="√">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lzl-9N-pgg"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zku-Zf-QGz">
-                                                        <rect key="frame" x="192" y="0.0" width="86" height="123.66666666666666"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="÷"/>
+                                                        <rect key="frame" x="207.66666666666669" y="0.0" width="102.66666666666669" height="81.333333333333371"/>
+                                                        <color key="backgroundColor" red="0.89282598349999998" green="0.58594554399999998" blue="0.44377152489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="÷">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TD3-f7-1Mc"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMC-Iq-sax">
-                                                        <rect key="frame" x="288" y="0.0" width="86" height="123.66666666666666"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="×"/>
+                                                        <rect key="frame" x="311.33333333333326" y="0.0" width="102.66666666666669" height="81.333333333333371"/>
+                                                        <color key="backgroundColor" red="1" green="0.65628191250000001" blue="0.49704145379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="÷">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OEc-Yy-5Ky"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="07w-q2-saq">
-                                                <rect key="frame" x="0.0" y="133.66666666666669" width="374" height="123.66666666666669"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="07w-q2-saq">
+                                                <rect key="frame" x="0.0" y="165.00000000000003" width="414" height="81.666666666666629"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5U7-Ov-t3s">
-                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="123.66666666666666"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="π"/>
-                                                        <connections>
-                                                            <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SK6-98-9ly"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMC-YI-hEp">
-                                                        <rect key="frame" x="96" y="0.0" width="86" height="123.66666666666666"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="7"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="81.666666666666629"/>
+                                                        <color key="backgroundColor" red="0.97478316759999994" green="0.98443448600000005" blue="0.98443448600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="7">
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VJM-QO-DV5"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oO4-1G-g9v">
-                                                        <rect key="frame" x="192" y="0.0" width="86" height="123.66666666666666"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="8"/>
+                                                        <rect key="frame" x="103.66666666666666" y="0.0" width="102.99999999999997" height="81.666666666666629"/>
+                                                        <color key="backgroundColor" red="0.97478316759999994" green="0.98443448600000005" blue="0.98443448600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="8">
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qzg-Kv-2we"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLQ-9g-mQF">
-                                                        <rect key="frame" x="288" y="0.0" width="86" height="123.66666666666666"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="9"/>
+                                                        <rect key="frame" x="207.66666666666669" y="0.0" width="102.66666666666669" height="81.666666666666629"/>
+                                                        <color key="backgroundColor" red="0.97478316759999994" green="0.98443448600000005" blue="0.98443448600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="9">
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NbR-7e-Yeh"/>
                                                         </connections>
                                                     </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f5b-S2-zzf">
-                                                <rect key="frame" x="0.0" y="267.33333333333331" width="374" height="123.33333333333337"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVc-yF-t0c">
-                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="123.33333333333337"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="√"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5U7-Ov-t3s">
+                                                        <rect key="frame" x="311.33333333333326" y="0.0" width="102.66666666666669" height="81.666666666666629"/>
+                                                        <color key="backgroundColor" red="1" green="0.65628191250000001" blue="0.49704145379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="×">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
-                                                            <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dfr-9k-OdT"/>
+                                                            <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SK6-98-9ly"/>
                                                         </connections>
                                                     </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="f5b-S2-zzf">
+                                                <rect key="frame" x="0.0" y="247.66666666666666" width="414" height="81.666666666666714"/>
+                                                <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nE-lG-rjg">
-                                                        <rect key="frame" x="96" y="0.0" width="86" height="123.33333333333337"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="4"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="81.666666666666686"/>
+                                                        <color key="backgroundColor" red="0.97478316759999994" green="0.98443448600000005" blue="0.98443448600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="4">
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HV6-TM-ymn"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQv-Jj-9GD">
-                                                        <rect key="frame" x="192" y="0.0" width="86" height="123.33333333333337"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="5"/>
+                                                        <rect key="frame" x="103.66666666666666" y="0.0" width="102.99999999999997" height="81.666666666666686"/>
+                                                        <color key="backgroundColor" red="0.97478316759999994" green="0.98443448600000005" blue="0.98443448600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="5">
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rud-cd-vNp"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0k-Qh-lGt">
-                                                        <rect key="frame" x="288" y="0.0" width="86" height="123.33333333333337"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="6"/>
+                                                        <rect key="frame" x="207.66666666666669" y="0.0" width="102.66666666666669" height="81.666666666666686"/>
+                                                        <color key="backgroundColor" red="0.97478316759999994" green="0.98443448600000005" blue="0.98443448600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="6">
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGZ-m5-VRR"/>
                                                         </connections>
                                                     </button>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5yK-FD-feP">
-                                                <rect key="frame" x="0.0" y="400.66666666666663" width="374" height="123.66666666666663"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPx-Qu-E2f">
-                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="123.66666666666669"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="cos"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVc-yF-t0c">
+                                                        <rect key="frame" x="311.33333333333326" y="0.0" width="102.66666666666669" height="81.666666666666686"/>
+                                                        <color key="backgroundColor" red="1" green="0.65628191250000001" blue="0.49704145379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="−">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
-                                                            <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o8o-uI-UvN"/>
+                                                            <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dfr-9k-OdT"/>
                                                         </connections>
                                                     </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5yK-FD-feP">
+                                                <rect key="frame" x="0.0" y="330.33333333333337" width="414" height="81.333333333333371"/>
+                                                <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGF-k6-kgN">
-                                                        <rect key="frame" x="96" y="0.0" width="86" height="123.66666666666669"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="1"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.66666666666667" height="81.333333333333371"/>
+                                                        <color key="backgroundColor" red="0.97478316759999994" green="0.98443448600000005" blue="0.98443448600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="1">
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cS4-Pb-QF0"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNN-Wg-tET">
-                                                        <rect key="frame" x="192" y="0.0" width="86" height="123.66666666666669"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="2"/>
+                                                        <rect key="frame" x="103.66666666666666" y="0.0" width="102.99999999999997" height="81.333333333333371"/>
+                                                        <color key="backgroundColor" red="0.97478316759999994" green="0.98443448600000005" blue="0.98443448600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="2">
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GeT-SF-YEj"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmE-g0-1Y1">
-                                                        <rect key="frame" x="288" y="0.0" width="86" height="123.66666666666669"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="3"/>
+                                                        <rect key="frame" x="207.66666666666669" y="0.0" width="102.66666666666669" height="81.333333333333371"/>
+                                                        <color key="backgroundColor" red="0.97478316759999994" green="0.98443448600000005" blue="0.98443448600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="3">
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0HT-Ay-54R"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPx-Qu-E2f">
+                                                        <rect key="frame" x="311.33333333333326" y="0.0" width="102.66666666666669" height="81.333333333333371"/>
+                                                        <color key="backgroundColor" red="1" green="0.65628191250000001" blue="0.49704145379999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="+">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o8o-uI-UvN"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WDh-XE-oVh">
-                                                <rect key="frame" x="0.0" y="534.33333333333348" width="374" height="123.66666666666663"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="WDh-XE-oVh">
+                                                <rect key="frame" x="0.0" y="412.66666666666674" width="414" height="81.666666666666629"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Hg-Fc-1dP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="86" height="123.66666666666663"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="±"/>
-                                                        <connections>
-                                                            <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0xD-K2-TOl"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICb-59-Jan">
-                                                        <rect key="frame" x="96" y="0.0" width="86" height="123.66666666666663"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="."/>
-                                                        <connections>
-                                                            <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OiS-iY-H0k"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnU-ZV-Hok">
-                                                        <rect key="frame" x="192" y="0.0" width="86" height="123.66666666666663"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="0"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnU-ZV-Hok">
+                                                        <rect key="frame" x="0.0" y="0.0" width="206.66666666666666" height="81.666666666666629"/>
+                                                        <color key="backgroundColor" red="0.97478316759999994" green="0.98443448600000005" blue="0.98443448600000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="0">
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W2D-RO-Mq4"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICb-59-Jan">
+                                                        <rect key="frame" x="207.66666666666669" y="0.0" width="102.66666666666669" height="81.666666666666629"/>
+                                                        <color key="backgroundColor" red="0.97478316755001493" green="0.98443448604060912" blue="0.98443448604060912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title=".">
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OiS-iY-H0k"/>
+                                                        </connections>
+                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hl9-qy-1zf">
-                                                        <rect key="frame" x="288" y="0.0" width="86" height="123.66666666666663"/>
-                                                        <color key="backgroundColor" red="0.9271041283" green="0.89965165079999998" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <state key="normal" title="="/>
+                                                        <rect key="frame" x="311.33333333333326" y="0.0" width="102.66666666666669" height="81.666666666666629"/>
+                                                        <color key="backgroundColor" red="1" green="0.65628191250972101" blue="0.49704145384163156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
+                                                        <state key="normal" title="=">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OEY-1S-epa"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="ICb-59-Jan" firstAttribute="width" secondItem="Hl9-qy-1zf" secondAttribute="width" id="g7U-8S-dQN"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Hl9-qy-1zf" firstAttribute="width" secondItem="BPx-Qu-E2f" secondAttribute="width" id="e5e-6s-SMS"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="g00-Ur-FU9" secondAttribute="trailing" id="0cT-Ao-hgg"/>
+                            <constraint firstAttribute="trailing" secondItem="g00-Ur-FU9" secondAttribute="trailing" id="0cT-Ao-hgg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="g00-Ur-FU9" secondAttribute="bottom" id="8xq-Vb-q3K"/>
-                            <constraint firstItem="g00-Ur-FU9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AqF-ff-yl9"/>
+                            <constraint firstItem="g00-Ur-FU9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AqF-ff-yl9"/>
+                            <constraint firstItem="o4z-rB-A8M" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="3:10" id="W4N-QJ-PPu"/>
                             <constraint firstItem="g00-Ur-FU9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aJ4-uV-7ej"/>
                         </constraints>
                     </view>

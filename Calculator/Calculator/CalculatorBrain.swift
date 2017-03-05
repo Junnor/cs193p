@@ -25,6 +25,7 @@
 
 import Foundation
 
+
 struct CalculatorBrain {
   
   private var accumulator: Double?
@@ -40,7 +41,9 @@ struct CalculatorBrain {
     "π": Operation.constant(Double.pi),
     "e": Operation.constant(M_E),
     "√": Operation.unaryOperation(sqrt),
+    "sin": Operation.unaryOperation(sin),
     "cos": Operation.unaryOperation(cos),
+    "tan": Operation.unaryOperation(tan),
     "±": Operation.unaryOperation({ -$0 }),
     "×": Operation.binaryOperaion({ $0 * $1 }),
     "÷": Operation.binaryOperaion({ $0 / $1 }),

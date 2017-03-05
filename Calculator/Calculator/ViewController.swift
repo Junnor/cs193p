@@ -14,16 +14,33 @@ class ViewController: UIViewController {
   
   var useIsInTheMiddleOfTyping = false
   
+  private var legalDotSymbol = true
   
   @IBAction func touchDigit(_ sender: UIButton) {
     let value = sender.currentTitle!
     print("\(value) was selected")
     
     if useIsInTheMiddleOfTyping {
-      let text = display.text!
-      display.text = text + value
+      
+      if value == "." {
+        if legalDotSymbol {
+          let text = display.text!
+          display.text = text + value
+
+          legalDotSymbol = false
+        }
+      } else {
+        let text = display.text!
+        display.text = text + value
+      }
+      
     } else {
-      display.text = value
+      if value == "." && legalDotSymbol {
+        display.text = "0."
+        legalDotSymbol = false
+      } else {
+        display.text = value
+      }
       useIsInTheMiddleOfTyping = true
     }
   }
@@ -48,6 +65,9 @@ class ViewController: UIViewController {
  
  */
   @IBAction func operate(_ sender: UIButton) {
+    
+    legalDotSymbol = true
+    
     if useIsInTheMiddleOfTyping {
       brain.setOperand(dispalyValue)
       
