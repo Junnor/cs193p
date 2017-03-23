@@ -113,7 +113,7 @@
                                                         <rect key="frame" x="207.66666666666669" y="0.0" width="102.66666666666669" height="81.333333333333371"/>
                                                         <color key="backgroundColor" red="0.89282598349999998" green="0.58594554399999998" blue="0.44377152489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="30"/>
-                                                        <state key="normal" title="÷">
+                                                        <state key="normal" title="x2">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
                                                         <connections>

@@ -52,6 +52,11 @@ struct CalculatorBrain {
     "=": Operation.equals
   ]
   
+  private var resultIsPending = false
+//  private var description: String {
+//    return 
+//  }
+  
   mutating func performOperation(_ symbol: String) {
     if let operation = operations[symbol] {
       switch operation {
@@ -65,6 +70,8 @@ struct CalculatorBrain {
       case .binaryOperaion(let function):
         
         if accumulator != nil {
+          resultIsPending = true
+          
           pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: accumulator!)
           accumulator = nil
         }
