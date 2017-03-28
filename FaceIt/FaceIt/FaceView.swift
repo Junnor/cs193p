@@ -11,20 +11,34 @@ import UIKit
 @IBDesignable
 class FaceView: UIView {
 
-    @IBInspectable
-    var scale: CGFloat = 0.9
+    // MARK: - Public
     
     @IBInspectable
-    var eyesOpen: Bool = true
+    var scale: CGFloat = 0.9 { didSet { setNeedsDisplay() } }
     
     @IBInspectable
-    var mouthCurvature: Double = 0.5
+    var eyesOpen: Bool = true { didSet { setNeedsDisplay() } }
     
     @IBInspectable
-    var lineWidth: CGFloat = 5.0
+    var mouthCurvature: Double = 0.5 { didSet { setNeedsDisplay() } }
     
     @IBInspectable
-    var color: UIColor = UIColor.red
+    var lineWidth: CGFloat = 5.0 { didSet { setNeedsDisplay() } }
+    
+    @IBInspectable
+    var color: UIColor = UIColor.red { didSet { setNeedsDisplay() } }
+    
+    func changaSclae(byReactingTo pinchRecognizer: UIPinchGestureRecognizer) {
+        switch pinchRecognizer.state {
+        case .changed, .ended:
+            scale *= pinchRecognizer.scale
+            pinchRecognizer.scale = 1
+        default:
+            break
+        }
+    }
+    
+    // MARK: - Private
     
     private var skullRadius: CGFloat {
         return min(bounds.width, bounds.height) / 2 * scale
