@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FaceViewController.swift
 //  FaceIt
 //
 //  Created by Ju on 2017/3/23.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FaceViewController: VCLLoggingViewController {
     
     @IBOutlet weak var faceView: FaceView! {
         didSet {
