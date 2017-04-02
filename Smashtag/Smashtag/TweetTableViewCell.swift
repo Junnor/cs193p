@@ -24,8 +24,29 @@ class TweetTableViewCell: UITableViewCell {
     }
     
     private func updateUI() {
-        tweetTextLabel?.text = tweet?.text
         tweetUserLabel?.text = tweet?.user.description
+        
+        if let text = tweet?.text {
+            let attiString = NSMutableAttributedString(string: text)
+            if let hastags = tweet?.hashtags {
+                for tag: Mention in hastags {
+                    attiString.setAttributes([NSForegroundColorAttributeName: UIColor.red], range: tag.nsrange)
+                }
+            }
+            if let mentionUrls = tweet?.urls {
+                for url: Mention in mentionUrls {
+                    attiString.setAttributes([NSForegroundColorAttributeName: UIColor.green], range: url.nsrange)
+                }
+            }
+            if let mentionUser = tweet?.userMentions {
+                for user: Mention in mentionUser {
+                    attiString.setAttributes([NSForegroundColorAttributeName: UIColor.blue], range: user.nsrange)
+                }
+            }
+            
+            tweetTextLabel.attributedText = attiString
+        }
+
         
         if let profileUrl = tweet?.user.profileImageURL {
             DispatchQueue.global().async { [weak self] in

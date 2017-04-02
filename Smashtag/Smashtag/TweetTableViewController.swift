@@ -42,15 +42,18 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         if let request = lastTwitterRequest?.newer ?? twittersRequest() {
             lastTwitterRequest = request
             
-            request.fetchTweets({ [weak self] newTweets in
-                DispatchQueue.main.async {
-                    if request == self?.lastTwitterRequest {
-                        self?.tweets.insert(newTweets, at: 0)
-                        self?.tableView.insertSections([0], with: .fade)
+            DispatchQueue.global().async { [weak self] in
+                request.fetchTweets({ newTweets in
+                    DispatchQueue.main.async {
+                        if request == self?.lastTwitterRequest {
+                            self?.tweets.insert(newTweets, at: 0)
+                            self?.tableView.insertSections([0], with: .fade)
+                        }
+                        self?.refreshControl?.endRefreshing()
                     }
-                    self?.refreshControl?.endRefreshing()
-                }
-            })
+                })
+            }
+
         } else {
             refreshControl?.endRefreshing()
         }
@@ -71,6 +74,12 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         
         refreshControl = UIRefreshControl()
         tableView.addSubview(refreshControl!)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        refreshControl?.endRefreshing()
     }
 
     // MARK: - Text field delegate
@@ -102,5 +111,36 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         }
 
         return cell
+    }
+    
+    // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowTweetDetail", sender: indexPath)
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let _ = segue.identifier {
+            if let indexPath = sender as? IndexPath,
+                let tweetDetailVC = segue.destination.contents as? TweetDetailTableViewController {
+                let tweet = tweets[indexPath.section][indexPath.row]
+                tweetDetailVC.tweet = tweet
+                tweetDetailVC.title = tweet.user.description
+            }
+        }
+    }
+    
+}
+
+extension UIViewController {
+    
+    var contents: UIViewController {
+        if let contents = self as? UINavigationController {
+            return contents.visibleViewController ?? self
+        } else {
+            return self
+        }
     }
 }
