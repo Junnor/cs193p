@@ -37,6 +37,9 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
                 if let searchs = userDefaults.value(forKey: RecentSearckKey) {
                     recentSearchs = searchs as! [String]
                 }
+                if recentSearchs.count == 100 {
+                    recentSearchs.removeLast()
+                }
                 recentSearchs.insert(searchText, at: 0)
                 userDefaults.setValue(recentSearchs, forKey: RecentSearckKey)
                 userDefaults.synchronize()
