@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B0F1EAA1E9202B70074D090 /* TweetRecentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0F1EA91E9202B70074D090 /* TweetRecentsTableViewController.swift */; };
 		8BB716111E90C26E00ACD5E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB716101E90C26E00ACD5E8 /* AppDelegate.swift */; };
 		8BB716161E90C26E00ACD5E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB716141E90C26E00ACD5E8 /* Main.storyboard */; };
 		8BB716181E90C26E00ACD5E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB716171E90C26E00ACD5E8 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8B0F1EA91E9202B70074D090 /* TweetRecentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetRecentsTableViewController.swift; sourceTree = "<group>"; };
 		8BB7160D1E90C26E00ACD5E8 /* Smashtag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smashtag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB716101E90C26E00ACD5E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BB716151E90C26E00ACD5E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				8BB716101E90C26E00ACD5E8 /* AppDelegate.swift */,
 				8BB716221E90C29F00ACD5E8 /* TweetTableViewController.swift */,
 				8BE1735B1E912E8E00FD3036 /* TweetDetailTableViewController.swift */,
+				8B0F1EA91E9202B70074D090 /* TweetRecentsTableViewController.swift */,
 				8BE173591E912E7B00FD3036 /* ImageViewController.swift */,
 				8BB716241E90C3B800ACD5E8 /* TweetTableViewCell.swift */,
 				8BE1735D1E912F4800FD3036 /* TweetImageTableViewCell.swift */,
@@ -171,6 +174,7 @@
 			files = (
 				8BB716111E90C26E00ACD5E8 /* AppDelegate.swift in Sources */,
 				8BE1735E1E912F4800FD3036 /* TweetImageTableViewCell.swift in Sources */,
+				8B0F1EAA1E9202B70074D090 /* TweetRecentsTableViewController.swift in Sources */,
 				8BB716231E90C29F00ACD5E8 /* TweetTableViewController.swift in Sources */,
 				8BE1735A1E912E7B00FD3036 /* ImageViewController.swift in Sources */,
 				8BE1735C1E912E8E00FD3036 /* TweetDetailTableViewController.swift in Sources */,

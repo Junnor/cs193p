@@ -9,6 +9,10 @@
 import UIKit
 import Twitter
 
+protocol TweetDetailTableViewControllerDelegate: class {
+    func mentionSelectedWithTweetDetail(_ tweetDetailViewController: TweetDetailTableViewController, mentionText text: String)
+}
+
 class TweetDetailTableViewController: UITableViewController {
     
     private enum TweetMention: Int {
@@ -17,6 +21,8 @@ class TweetDetailTableViewController: UITableViewController {
         case urls
         case userMentions
     }
+    
+    weak var delegate: TweetDetailTableViewControllerDelegate?
     
     var tweet: Tweet?
 
@@ -112,17 +118,24 @@ class TweetDetailTableViewController: UITableViewController {
             switch mention {
             case .images:
                 performSegue(withIdentifier: "ShowTweetImage", sender: indexPath)
-            case .hastags, .userMentions:
-                // TODO
-                break
+            case .hastags:
+                let hastags = tweet?.hashtags
+                let tag = hastags![indexPath.row]
+                self.delegate?.mentionSelectedWithTweetDetail(self, mentionText: tag.keyword)
+                let _ = navigationController?.popViewController(animated: true)
+            case .userMentions:
+                let userMentions = tweet?.userMentions
+                let userMention = userMentions![indexPath.row]
+                self.delegate?.mentionSelectedWithTweetDetail(self, mentionText: userMention.keyword)
+                let _ = navigationController?.popViewController(animated: true)
             case .urls:
                 let keyword = tweet?.urls[indexPath.row].keyword
                 let url = URL(string: keyword!)
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(url!, options: [:], completionHandler: nil)
                 } else {
+                    print("Method open(url) not available")
                 }
-                
             }
         }
     }

@@ -9,6 +9,9 @@
 import UIKit
 import Twitter
 
+
+let RecentSearckKey = "RecentSearckTextKey"
+
 class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     var tweets = [[Tweet]]()
@@ -25,6 +28,20 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
             
             searchForTweets()
             title = searchText
+            
+            // Store the recent searchs
+            if let searchText = searchText {
+                let userDefaults = UserDefaults()
+                
+                var recentSearchs = [String]()
+                if let searchs = userDefaults.value(forKey: RecentSearckKey) {
+                    recentSearchs = searchs as! [String]
+                }
+                recentSearchs.insert(searchText, at: 0)
+                userDefaults.setValue(recentSearchs, forKey: RecentSearckKey)
+                userDefaults.synchronize()
+            }
+        
         }
     }
     
@@ -39,6 +56,11 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     private func searchForTweets() {
         refreshControl?.beginRefreshing()
+        
+        // may bug bug
+        let height = refreshControl?.frame.size.height
+        tableView?.setContentOffset(CGPoint(x: 0, y: -height!), animated: true)
+
         if let request = lastTwitterRequest?.newer ?? twittersRequest() {
             lastTwitterRequest = request
             
@@ -81,7 +103,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         
         refreshControl?.endRefreshing()
     }
-
+    
     // MARK: - Text field delegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -118,7 +140,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "ShowTweetDetail", sender: indexPath)
     }
-    
+        
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -128,10 +150,17 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
                 let tweet = tweets[indexPath.section][indexPath.row]
                 tweetDetailVC.tweet = tweet
                 tweetDetailVC.title = tweet.user.description
+                tweetDetailVC.delegate = self
             }
         }
     }
     
+}
+
+extension TweetTableViewController: TweetDetailTableViewControllerDelegate {
+    func mentionSelectedWithTweetDetail(_ tweetDetailViewController: TweetDetailTableViewController, mentionText text: String) {
+        searchText = text
+    }
 }
 
 extension UIViewController {
